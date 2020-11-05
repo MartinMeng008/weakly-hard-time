@@ -1,0 +1,36 @@
+\usepackage{xspace}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{amssymb,amsmath,amsthm}
+\graphicspath{{graphics/}}
+\usepackage{color}
+\usepackage{hyperref}           
+\usepackage{tabularx}
+\usepackage{eucal}
+\usepackage{booktabs}
+
+\usepackage{listings}
+\lstset{captionpos=b,language=verilog,morekeywords={assert,property}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=red,      
+    urlcolor=magenta,
+    breaklinks=true,            
+}
+
+
+\newcommand{\cks}[1]{\textcolor{red}{cks: #1}}
+
+%% Text and formatting
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+
