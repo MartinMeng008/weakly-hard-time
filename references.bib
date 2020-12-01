@@ -1,19 +1,331 @@
-@inproceedings{zhang2018end,
-author={Rui Zhang and Calvin Deutschbein and Peng Huang and Cynthia Sturton},
-title={End-to-End Automated Exploit Generation for Validating the Security of
-Processor Designs},
-booktitle={Proceedings of the International Symposium on Microarchitecture
-(MICRO)},
-year={2018},
-publisher={IEEE/ACM}
+% ======== Group 1: definition ======== %
+
+% Real time system terminology: hard, soft constraint
+@book{liu2000real,
+  title={Real-Time Systems},
+  author={Liu, J.W.S.},
+  isbn={9780130996510},
+  lccn={99051522},
+  url={https://books.google.com/books?id=855QAAAAMAAJ},
+  year={2000},
+  publisher={Prentice Hall}
 }
 
-@inproceedings{zhang2018recursive,
-author={Rui Zhang and Cynthia Sturton},
-title={A Recursive Strategy for Symbolic Execution to Find Exploits in Hardware
-Designs},
-booktitle={Proceedings of the International Workshop on Formal Methods and
-Security (FMS)},
-year={2018},
-publisher={ACM}
+% introduce m-k firm:  at least m out of any k consecutive customers must meet their deadlines.
+@article{hamdaoui1995dynamic,
+  title={A dynamic priority assignment technique for streams with (m, k)-firm deadlines},
+  author={Hamdaoui, Moncef and Ramanathan, Parameswaran},
+  journal={IEEE transactions on Computers},
+  volume={44},
+  number={12},
+  pages={1443--1451},
+  year={1995},
+  publisher={IEEE}
 }
+% original paper for weakly hard system
+% WHRT guarantees are computed only for periodic tasks with static priorities.
+@ARTICLE{bernat2001weakly,  author={G. {Bernat} and A. {Burns} and A. {Liamosi}},  journal={IEEE Transactions on Computers},   title={Weakly hard real-time systems},   year={2001},  volume={50},  number={4},  pages={308-321},  doi={10.1109/12.919277}}
+
+% ======== Group 2: computing weakly-hard guarantees ======== %
+
+% response time original paper
+@article{joseph1986finding,
+  title={Finding response times in a real-time system},
+  author={Joseph, Mathai and Pandya, Paritosh},
+  journal={The Computer Journal},
+  volume={29},
+  number={5},
+  pages={390--395},
+  year={1986},
+  publisher={Oxford University Press}
+}
+
+% presents a response time based formulation that provides a guarantee on the weakly- hard schedulability of messages
+% However, this weakly-hard guarantee is still pessimistic, especially on the CAN protocol. Simulation based experiments show that many weakly hard constraints are not violated even at a much higher error rate than the result of weakly-hard schedulability analysis,  
+@inproceedings{broster2002weakly,
+  title={Weakly hard real-time constraints on controller area network},
+  author={Broster, Ian and Bernat, Guillem and Burns, Alan},
+  booktitle={Proceedings 14th Euromicro Conference on Real-Time Systems. Euromicro RTS 2002},
+  pages={134--141},
+  year={2002},
+  organization={IEEE}
+}
+
+% analysis of schedulability using model checking?
+% use m-K model
+@inproceedings{frehse2014formal,
+  title={Formal analysis of timing effects on closed-loop properties of control software},
+  author={Frehse, Goran and Hamann, Arne and Quinton, Sophie and Woehrle, Matthias},
+  booktitle={2014 IEEE Real-Time Systems Symposium},
+  pages={53--62},
+  year={2014},
+  organization={IEEE}
+}
+
+% original TWCA analysis paper
+@INPROCEEDINGS{quinton2012twca,  author={S. {Quinton} and M. {Hanke} and R. {Ernst}},  booktitle={2012 Design, Automation   Test in Europe Conference   Exhibition (DATE)},   title={Formal analysis of sporadic overload in real-time systems},   year={2012},  volume={},  number={},  pages={515-520},  doi={10.1109/DATE.2012.6176523}}
+
+% TWCA analysis.  determine the maximum number of deadline misses for a given deadline.
+% ILP formulation
+@inproceedings{hammadeh2014extending,
+  title={Extending typical worst-case analysis using response-time dependencies to bound deadline misses},
+  author={Hammadeh, Zain AH and Quinton, Sophie and Ernst, Rolf},
+  booktitle={Proceedings of the 14th International Conference on Embedded Software},
+  pages={1--10},
+  year={2014}
+}
+
+% A general formulation of computing tight deadline miss models in the context of systems where some tasks occasionally experience sporadic overload. TWCA
+@INPROCEEDINGS{xu2015improve,  author={W. {Xu} and Z. A. H. {Hammadeh} and A. {Kröller} and R. {Ernst} and S. {Quinton}},  booktitle={2015 27th Euromicro Conference on Real-Time Systems},   title={Improved Deadline Miss Models for Real-Time Systems Using Typical Worst-Case Analysis},   year={2015},  volume={},  number={},  pages={247-256},  doi={10.1109/ECRTS.2015.29}}
+
+@INPROCEEDINGS{hammadeh2017bound,  author={Z. A. H. {Hammadeh} and R. {Ernst} and S. {Quinton} and R. {Henia} and L. {Rioux}},  booktitle={Design, Automation   Test in Europe Conference   Exhibition (DATE), 2017},   title={Bounding deadline misses in weakly-hard real-time systems with task dependencies},   year={2017},  volume={},  number={},  pages={584-589},  doi={10.23919/DATE.2017.7927054}}
+
+% response time analysis is too pessimistic
+% compute weakly-hard real-time guarantees in the form of a deadline miss model using Typical Worst-Case Analysis for real-time messages with weighted round- robin scheduling
+% however, only for weighted round-robin. only verify existing weakly-hard constraints instead of generating them.
+@inproceedings{hammadeh2018weakly,
+  title={Weakly-hard real-time guarantees for weighted round-robin scheduling of real-time messages},
+  author={Hammadeh, Zain AH and Ernst, Rolf},
+  booktitle={2018 IEEE 23rd International Conference on Emerging Technologies and Factory Automation (ETFA)},
+  volume={1},
+  pages={384--391},
+  year={2018},
+  organization={IEEE}
+}
+
+
+% first verification method to provide weakly-hard guarantees for distributed embedded systems.
+% for tasks and task chains in systems with multiple resources under partitioned scheduling with fixed priorities.
+@inproceedings{ahrendts2018verifying,
+  title={Verifying weakly-hard real-time properties of traffic streams in switched networks},
+  author={Ahrendts, Leonie and Quinton, Sophie and Boroske, Thomas and Ernst, Rolf},
+  booktitle={ECRTS 2018-30th Euromicro Conference on Real-Time Systems},
+  pages={1--22},
+  year={2018}
+}
+
+% safety verification of weakly hard systems on linear control systems
+@INPROCEEDINGS{duggirala2015analyzing,  author={P. S. {Duggirala} and M. {Viswanathan}},  booktitle={2015 IEEE Real-Time Systems Symposium},   title={Analyzing Real Time Linear Control Systems Using Software Verification},   year={2015},  volume={},  number={},  pages={216-226},  doi={10.1109/RTSS.2015.28}}
+
+% verify that the deadline misses in a WHRT doesn't influence the safety of the system.
+% focus on the safety verification problem of nonlinear weakly-hard systems.
+% present a method to formally verify the safety of certain control systems under weakly-hard constraints.
+% safety of certain control systems under weakly-hard constraints.
+@inproceedings{huang2019formal,
+  title={Formal verification of weakly-hard systems},
+  author={Huang, Chao and Li, Wenchao and Zhu, Qi},
+  booktitle={Proceedings of the 22nd ACM International Conference on Hybrid Systems: Computation and Control},
+  pages={197--207},
+  year={2019}
+}
+% propose a tool for verifying the safety of WHS
+@article{huang2020saw,
+  title={SAW: A Tool for Safety Analysis of Weakly-hard Systems},
+  author={Huang, Chao and Chang, Kai-Chieh and Lin, Chung-Wei and Zhu, Qi},
+  journal={arXiv preprint arXiv:2005.07159},
+  year={2020}
+}
+
+% An extension of ~\cite{bernat2001weakly}. periodic tasks with static priorities without knowing task offsets. a Mixed Integer Linear Programming (MILP) problem formulation.
+% However, the method's scalability is limited by the size of tasks because of the complexity of the MILP.
+@article{sun2017weakly,
+  title={Weakly hard schedulability analysis for fixed priority scheduling of periodic real-time tasks},
+  author={Sun, Youcheng and Natale, Marco Di},
+  journal={ACM Transactions on Embedded Computing Systems (TECS)},
+  volume={16},
+  number={5s},
+  pages={1--19},
+  year={2017},
+  publisher={ACM New York, NY, USA}
+}
+
+
+% extended to resource sharing and jitter.
+% constrained-deadline periodic real-time systems scheduled with fixed priority and no knowledge of the task activation offsets, while allowing for activation jitter
+@article{pazzagliageneralized,
+  title={Generalized Weakly Hard Schedulability Analysis for Real-Time Periodic Tasks},
+  author={Pazzaglia, P and Sun, Y and Di Natale, M}
+}
+
+% propose a new scheduling policy, called job-class-level fixed-priority preemptive scheduling, for periodic and sporadic tasks with (m, K) constraints.
+% The running time of the resulting schedulability analysis is much shorter than ~\cite{sun2017weakly}
+@inproceedings{choi2019job,
+  title={Job-class-level fixed priority scheduling of weakly-hard real-time systems},
+  author={Choi, Hyunjong and Kim, Hyoseung and Zhu, Qi},
+  booktitle={2019 IEEE Real-Time and Embedded Technology and Applications Symposium (RTAS)},
+  pages={241--253},
+  year={2019},
+  organization={IEEE}
+}
+
+% ======== Group 3: control systems missing deadlines ======== %
+
+% Group 3.1: areas of applications of WHRT
+
+% Group 3.1.1: embedded devices with unreliable power supply. need intermittent computing. suspend because of power off. => miss deadlines.
+@article{balsamo2016hibernus,
+  title={Hibernus++: a self-calibrating and adaptive system for transiently-powered embedded devices},
+  author={Balsamo, Domenico and Weddell, Alex S and Das, Anup and Arreola, Alberto Rodriguez and Brunelli, Davide and Al-Hashimi, Bashir M and Merrett, Geoff V and Benini, Luca},
+  journal={IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  volume={35},
+  number={12},
+  pages={1968--1980},
+  year={2016},
+  publisher={IEEE}
+}
+
+@inproceedings{talla2015powering,
+  title={Powering the next billion devices with wi-fi},
+  author={Talla, Vamsi and Kellogg, Bryce and Ransford, Benjamin and Naderiparizi, Saman and Gollakota, Shyamnath and Smith, Joshua R},
+  booktitle={Proceedings of the 11th ACM Conference on Emerging Networking Experiments and Technologies},
+  pages={1--13},
+  year={2015}
+}
+
+@inproceedings{colin2016chain,
+  title={Chain: tasks and channels for reliable intermittent programs},
+  author={Colin, Alexei and Lucia, Brandon},
+  booktitle={Proceedings of the 2016 ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications},
+  pages={514--530},
+  year={2016}
+}
+
+@inproceedings{lucia2017intermittent,
+  title={Intermittent computing: Challenges and opportunities},
+  author={Lucia, Brandon and Balaji, Vignesh and Colin, Alexei and Maeng, Kiwan and Ruppel, Emily},
+  booktitle={2nd Summit on Advances in Programming Languages (SNAPL 2017)},
+  year={2017},
+  organization={Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik}
+}
+
+% Group 3.1.2: multi-rate distributed systems that are sensitive to message losses. 
+% For instance, a sensor might be sending messages at a faster rate than the receiving controller can process them
+@inproceedings{li2015design,
+  title={Design and verification of multi-rate distributed systems},
+  author={Li, Wenchao and G{\'e}rard, L{\'e}onard and Shankar, Natarajan},
+  booktitle={2015 ACM/IEEE International Conference on Formal Methods and Models for Codesign (MEMOCODE)},
+  pages={20--29},
+  year={2015},
+  organization={IEEE}
+}
+
+% Group 3.1.3: image processing systems. human perception is the main source of deadline misses 
+@article{yang2010adaboost,
+  title={AdaBoost-based face detection for embedded systems},
+  author={Yang, Ming and Crenshaw, James and Augustine, Bruce and Mareachen, Russell and Wu, Ying},
+  journal={Computer Vision and Image Understanding},
+  volume={114},
+  number={11},
+  pages={1116--1125},
+  year={2010},
+  publisher={Elsevier}
+}
+
+% Group 3.2: control systems. This paper focuses on control systems. required control performance is satisfied in spite of missing up to m deadlines in a sequence of k deadlines
+
+% Group 3.2.1: a review of control systems.
+
+% Group 3.2.2
+
+% satisfy control performance for up to m misses in any sequence of k deadlines
+% periodic task instances are statically separated into mandatory and optional instances based on the (m,K) constraints, and only the mandatory ones are guaranteed to complete in time.
+@article{ramanathan1999overload,
+  title={Overload management in real-time control applications using (m, k)-firm guarantee},
+  author={Ramanathan, Parameswaran},
+  journal={IEEE Transactions on parallel and distributed systems},
+  volume={10},
+  number={6},
+  pages={549--559},
+  year={1999},
+  publisher={IEEE}
+}
+
+% provide analytical bounds on deadline misses such that the control loop retains its stability and meets its control performance requirements. 
+% prove an analytical upper bound of deadline miss ratio to ensure the stability of a distributed embedded control platform
+% Just study control systems that allow control feedback signals to miss their deadlines occasionally. No mention of the term weakly-hard. Doesn't link with the term "weakly-hard"
+@ARTICLE{goswami2014relax,  author={D. {Goswami} and R. {Schneider} and S. {Chakraborty}},  journal={IEEE Transactions on Control Systems Technology},   title={Relaxing Signal Delay Constraints in Distributed Embedded Controllers},   year={2014},  volume={22},  number={6},  pages={2337-2345},  doi={10.1109/TCST.2014.2301795}}
+
+% the worst-case control performance for an LQR controller is analyzed under deadline misses. 
+% The worst-case quadratic cost is analyzed for a given optimal linear quadratic regulator design
+@INPROCEEDINGS{horssen2016performance,  author={E. P. {van Horssen} and A. R. B. {Behrouzian} and D. {Goswami} and D. {Antunes} and T. {Basten} and W. P. M. H. {Heemels}},  booktitle={2016 European Control Conference (ECC)},   title={Performance analysis and controller improvement for linear systems with (m, k)-firm data losses},   year={2016},  volume={},  number={},  pages={2571-2577},  doi={10.1109/ECC.2016.7810677}}
+
+
+% design stable controller on weakly hard model
+@INPROCEEDINGS{linsenmayer2017stabilization,  author={S. {Linsenmayer} and F. {Allgower}},  booktitle={2017 IEEE 56th Annual Conference on Decision and Control (CDC)},   title={Stabilization of networked control systems with weakly hard real-time dropout description},   year={2017},  volume={},  number={},  pages={4765-4770},  doi={10.1109/CDC.2017.8264364}}
+
+
+% study the performance degradation of the weakly-hard system in correspondence to deadline misses pattern
+% study the impact of deadline miss patern on control performance
+@inproceedings{pazzaglia2018beyond,
+  title={Beyond the weakly hard model: Measuring the performance cost of deadline misses},
+  author={Pazzaglia, Paolo and Pannocchi, Luigi and Biondi, Alessandro and Di Natale, Marco},
+  booktitle={30th Euromicro Conference on Real-Time Systems (ECRTS 2018)},
+  year={2018},
+  organization={Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik}
+}
+
+
+% Analyze the stability of closed-loop systems whose controller miss deadlines sporadically.
+% While previous works focus on m-k model, they focus on another weakly-hard model, the number of consecutive deadline misses
+% joint spectral radius
+@inproceedings{maggio2020control,
+  title={Control-system stability under consecutive deadline misses constraints},
+  author={Maggio, Martina and Hamann, Arne and Mayer-John, Eckart and Ziegenbein, Dirk},
+  booktitle={32nd Euromicro Conference on Real-Time Systems (ECRTS 2020)},
+  year={2020},
+  organization={Schloss Dagstuhl-Leibniz-Zentrum f{\"u}r Informatik}
+}
+
+% ======== Group 4: applications in control systems ======== %
+
+% A co-design approach that utilizes feasible weakly-hard constraints on control tasks to enhance system’s capability for hosting security monitoring tasks.
+%1) sets feasible weakly-hard constraints on control tasks based on quantitative analysis.
+%		satisfy the requirements of control stability & performance
+%	2) optimizes the {allocation, priority, and period assignment}
+%		of the security monitoring tasks
+%		improve system security while meeting timing constraints
+@INPROCEEDINGS{liang2019security,  author={H. {Liang} and Z. {Wang} and D. {Roy} and S. {Dey} and S. {Chakraborty} and Q. {Zhu}},  booktitle={2019 IEEE 37th International Conference on Computer Design (ICCD)},   title={Security-Driven Codesign with Weakly-Hard Constraints for Real-Time Embedded Systems},   year={2019},  volume={},  number={},  pages={217-226},  doi={10.1109/ICCD46524.2019.00035}}
+
+% use weakly-hard to improve system’s capability to accommodate fault tolerance
+% techniques while ensuring timing and functional correctness
+@article{liang2020leveraging,
+  title={Leveraging Weakly-hard Constraints for Improving System Fault Tolerance with Functional and Timing Guarantees},
+  author={Liang, Hengyi and Wang, Zhilu and Jiao, Ruochen and Zhu, Qi},
+  journal={arXiv preprint arXiv:2008.06192},
+  year={2020}
+}
+
+
+% ======== Group 5: ILP framework for scheduling on weakly-hard systems ======== %
+
+% Linear Integer Programming is widely used to compute weakly-hard constraints and schedule tasks on weakly-hard systems. 
+% sun2017weakly & pazzagliageneralized use ILP to compute schedulability for periodic tasks with static priorities with free task offsets. 
+@book{schrijver1998theory,
+  title={Theory of linear and integer programming},
+  author={Schrijver, Alexander},
+  year={1998},
+  publisher={John Wiley \& Sons}
+}
+
+% ILP model to schedule {weakly-hard real-time tasks} => optimal solution
+%	on a heterogeneous multiprocessor system 
+%	goal: 	1) minimize energy consumption 
+%		2) performance is predictable
+% the object is only to minimize energy consumption
+% However, it takes a large amount of time and memory requirement to solve the ILP problem with an optimal solution. Heuristic search can be used in future work. Scalability issue. as nonlinear constraints are converted to linear ones, the number of constraints increases significantly. 
+@inproceedings{kumar2019ilp,
+  title={An ILP framework for energy optimized scheduling for weakly-hard real-time systems: work-in-progress},
+  author={Kumar, Niraj and Mayank, Jaishree and Mondal, Arijit},
+  booktitle={Proceedings of the International Conference on Embedded Software Companion},
+  pages={1--2},
+  year={2019}
+}
+
+% present a framework to co-synthesize schedules for all the application tasks τi and communication tasks ci in the Ethernet-based time-triggered systems such that some high-level objectives are optimized. schedule synthesis. formulate as a Mix Integer Programming problem.
+@inproceedings{Zhang2018SynthesizingCA,
+  title={Synthesizing Communication-Centric Automotive Cyber-Physical Systems},
+  author={L. Zhang},
+  year={2018}
+}
+
+

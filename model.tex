@@ -1,0 +1,79 @@
+\section{Weakly Hard Model} \label{model}
+
+Weakly hard model is a formalized description for systems that can sporadically miss deadlines. Bernat et al.~\cite{bernat2001weakly} proposed four definitions on weakly hard models. 
+
+\begin{definition} \label{def:meetany}
+A task $\tau$ \emph{"meets any n in m deadlines"}, if for any sequence of m consecutive jobs of $\tau$, there are at least n jobs that meet the deadline.
+\end{definition}
+
+\begin{definition} \label{def:meetrow}
+ A task $\tau$ \emph{"meets row n in m deadlines"}, if for any sequence of m consecutive jobs of $\tau$, there are at least a sequence of n consecutive jobs that meet the deadline.
+\end{definition}
+
+\begin{definition} \label{def:missany}
+ A task $\tau$ \emph{"misses any n in m deadlines"}, if for any sequence of m consecutive jobs of $\tau$, there are at most n deadline misses.
+ \end{definition}
+ 
+ \begin{definition} \label{def:missrow}
+ A task $\tau$ \emph{"misses row n in m deadlines"}, if for any sequence of m consecutive jobs of $\tau$, there are less than n consecutive deadline misses.
+ \end{definition}
+ 
+ These four types of weakly hard models are classified by two metrics. The first metric considers whether the model considers deadlines that are met or missed. The other metric considers whether the missed deadlines or deadlines that are met are required to be consecutive or not. Table~\ref{table:1} shows this two-dimensional classification. 
+
+% Table 1
+\begin{table}[h!]
+\caption{Classification of weakly hard models}
+ \begin{center}
+ \begin{tabular}{| c | c c |} 
+ \hline
+ Metrics & Met deadlines & Missed deadlines\\ [0.5ex] 
+ \hline
+ Consecutive & Definition~\ref{def:meetrow} & Definition~\ref{def:missrow} \\ 
+Any order & Definition~\ref{def:meetany} & Definition~\ref{def:missany} \\ 
+ \hline
+\end{tabular}
+\label{table:1}
+\end{center}
+ \end{table}
+
+% Def 3 is popular. Def 4 is studied
+The research community has focused on the model \emph{"misses any n in m deadlines"} defined in Definition~\ref{def:missany}, also called the m-K model. For example, Frehse et al. used model checking technique to analysis the schedulability under m-K model~\cite{frehse2014formal}. The analysis of Sun et al. on periodic tasks with static priorities with free offsets is based on m-K model as well~\cite{sun2017weakly}. Moreover, designing stable controller on the m-K model has been studied~\cite{linsenmayer2017stabilization}. 
+
+However, m-K model does not have any constraint on the consecutiveness of the deadline misses, but industrial cases often require consideration of the consecutiveness of deadline misses~\cite{maggio2020control}. Therefore, Maggio et al. considered the model in Definition~\ref{def:missrow} which bounds the maximum number of consecutive deadline misses. They analyzed the stability of control systems based on this model by considering joint spectral radius~\cite{maggio2020control}. 
+
+The relationship between the models "misses row n in m deadlines" (Definition~\ref{def:missrow}) and "misses any n in m deadlines" (Definition~\ref{def:missany}, m-K model) is that the model "misses row n in m deadlines" imposes additional constraints about consecutiveness on the task set and thus is a tighter model. Therefore, if a task set is schedulable on the model "misses any n in m deadlines" (Definition~\ref{def:missany}), then the task set is guaranteed to be schedulable on the model "misses row n in m deadlines" (Definition~\ref{def:missrow}). However, there exist cases in which a task set is schedulable on the model "misses row n in m deadlines" (Definition~\ref{def:missrow}) but not on the model "misses any n in m deadlines" (Definition~\ref{def:missany}). For instance, if a task misses n deadlines in a sequence of m consecutive deadlines but the n deadline misses are not consecutive, then this task satisfies the model "misses row n in m deadlines" (Definition~\ref{def:missrow}) but fails to satisfy the model "misses any n in m deadlines" (Definition~\ref{def:missany}). Because the "misses any n in m deadlines" model (Definition~\ref{def:missany}) includes the model "misses row n in m deadlines" (Definition~\ref{def:missrow}) in terms of schedulability, and is more popular in the research community, the rest of this survey will consider the m-K model only.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

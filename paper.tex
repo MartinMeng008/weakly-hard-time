@@ -1,33 +1,37 @@
 \documentclass[conference]{IEEEtran}
 
 \input{commands}
+\graphicspath{ {./figures/} }
 
 \begin{document}
 
-\title{Yippelia: A Very Good Research Project }
+\title{Survey of Weakly-hard Constraints on Distributed Embedded Control Systems}
 \author{
-  \IEEEauthorblockN{Martin Meng, Cynthia Sturton}
+  \IEEEauthorblockN{Martin Meng}
 \IEEEauthorblockA{The University of North Carolina at Chapel Hill\\
-martinmq@live.unc.edu, csturton@cs.unc.edu}
+martinmq@live.unc.edu}
 }
 
 \maketitle
 
+% This survey has reviewed recent works related to weakly hard constraints with an emphasis on its application to control systems. Various methods to compute and verify weakly-hard guarantees are studied. We focus on weakly hard model's applications to distributed embedded control systems such that the security and robustness of the systems are enhanced. We also study MIP formulation, an optimization technique common in the community of real-time systems. Lastly, we propose a new approach to leverage the weakly hard model to enhance the robustness of distributed embedded control systems in automated vehicles.
 
 \begin{abstract}
-  We did some things~\cite{zhang2018end,zhang2018recursive}.
+  Weakly hard models have been utilized to optimize the design of real-time distributed embedded control systems. This survey serves as an overview of research topics related to weakly hard models with an emphasis on their applications to control systems. Specifically, this survey proposes an approach to leverage the weakly hard model to enhance the robustness of distributed embedded control systems in automatic vehicles. This survey also summaries various methods to compute weakly hard guarantees, studies the impact of deadline miss on the stability of control systems, introduces cases in which weakly hard models are adopted to improve the security and fault tolerance of systems, and studies Mix Integer Programming problems in the context of real-time distributed systems.
 \end{abstract}
 
+\begin{IEEEkeywords}
+Distributed Systems, Embedded Systems, Controller Design, Real-time Systems, Weakly Hard Models, Cyber-Physical Systems, Security 
+\end{IEEEkeywords}
+
 \input{introduction}
-%\input{background}
-%\input{design}
-%\input{implementation}
-%\input{evaluation}
-%\input{related_work}
-%\input{conclusion}
+\input{model}
+\input{application}
+\input{mip}
+\input{rotation}
+\input{conclusion}
 
 \bibliographystyle{IEEEtran}
-%\bibliographystyle{plain}
 \bibliography{references}
 
 \end{document}
